@@ -1,82 +1,170 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>REPLACE_ME_NAME — Contact</title>
+<title>Kristofer J — Contact</title>
 
-<!-- Lightweight CSS framework and small custom styles -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram/dist/milligram.min.css">
 <style>
-  :root{--bg:#f6f8fb;--card:#fff;--muted:#6b7280;--accent:#0b1220}
-  body{display:flex;align-items:center;justify-content:center;min-height:100vh;background:var(--bg);margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto}
-  .card{max-width:460px;padding:28px;border-radius:12px;background:var(--card);box-shadow:0 6px 20px rgba(20,30,50,.08)}
-  h1{margin:0 0 6px;font-size:1.6rem}
-  .meta{color:var(--muted);margin-bottom:14px;font-size:0.95rem}
-  .links{display:flex;flex-wrap:wrap;gap:8px}
-  .link-btn{display:inline-flex;align-items:center;padding:8px 12px;border-radius:10px;background:#f3f6fb;text-decoration:none;color:var(--accent);font-weight:600}
-  .icon{width:18px;height:18px;margin-right:8px;display:inline-block;flex:0 0 18px}
-  footer{margin-top:14px;color:#9aa3b2;font-size:.9rem}
-  .small{font-size:.9rem;color:var(--muted)}
-  /* Replace or remove icons if you prefer plain text */
+  :root{
+    --bg-1:#0f1724; --bg-2:#071025; --card:rgba(255,255,255,0.06);
+    --glass: rgba(255,255,255,0.06);
+    --muted:#9aa3b2; --accent:#66d9ff; --accent-2:#a78bfa;
+    --btn-bg:rgba(255,255,255,0.04);
+  }
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto}
+  body{
+    background: linear-gradient(135deg,var(--bg-1),var(--bg-2));
+    display:flex;align-items:center;justify-content:center;
+    min-height:100vh;
+    overflow:hidden;
+    color:#e6eef6;
+  }
+
+  /* Background decorative icon */
+  .bg-svg{
+    position:fixed; inset:0; pointer-events:none; opacity:0.08;
+    display:block; transform:translateZ(0);
+  }
+
+  .card{
+    width: min(720px, 92%);
+    padding:28px;
+    border-radius:16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    box-shadow: 0 10px 40px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    backdrop-filter: blur(8px) saturate(110%);
+    border: 1px solid rgba(255,255,255,0.04);
+    display:grid;
+    grid-template-columns: 1fr 300px;
+    gap:20px;
+    align-items:start;
+  }
+
+  @media (max-width:800px){
+    .card{grid-template-columns:1fr; padding:20px;}
+  }
+
+  .left h1{margin:0 0 6px;font-size:1.8rem;letter-spacing:0.2px}
+  .meta{color:var(--muted);margin-bottom:16px;font-size:0.98rem}
+  .bio{color:var(--muted);font-size:0.95rem;margin-top:8px}
+
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .link-btn{
+    display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;
+    background:var(--btn-bg); color:var(--accent); text-decoration:none; font-weight:700;
+    box-shadow: 0 6px 18px rgba(3,10,20,0.35);
+    transition:transform .14s ease, box-shadow .14s ease, background .14s;
+  }
+  .link-btn:hover{transform:translateY(-4px); box-shadow:0 14px 28px rgba(3,10,20,0.5)}
+  .link-btn .icon{width:18px;height:18px;display:inline-block;flex:0 0 18px;opacity:0.95}
+
+  .right{
+    padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.03);
+    align-self:start;
+  }
+  .card .avatar{
+    width:76px;height:76px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;color:#061021;
+    box-shadow:0 6px 18px rgba(103,105,255,0.12);
+    margin-bottom:12px;
+  }
+  footer{margin-top:14px;color:var(--muted);font-size:.88rem}
+
+  .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);font-size:.85rem}
+
+  /* subtle animated gradient accent bar */
+  .accent-bar{height:6px;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2)); margin:10px 0; filter:blur(.6px); opacity:.9}
 </style>
 
-<div class="card">
-  <!-- Replace the visible text below -->
-  <h1><!-- REPLACE_ME_NAME_VISIBLE -->KristoferJ</h1>
+<!-- Decorative background SVG (game controller / geometric) -->
+<svg class="bg-svg" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#66d9ff"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(-50,-80)" fill="none" stroke="url(#g1)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.25">
+    <!-- stylized game controller silhouette -->
+    <path d="M300 420c-40-20-60-60-60-100 0-90 80-140 160-140h260c80 0 160 50 160 140 0 40-20 80-60 100l-80 34c-20 8-40 8-60 0l-80-34c-20-8-40-8-60 0z"/>
+    <!-- accent arcs -->
+    <circle cx="430" cy="330" r="18"/>
+    <circle cx="760" cy="350" r="14"/>
+    <path d="M520 300 l40 -40 M560 260 l20 -20" />
+  </g>
+</svg>
 
-  <!-- Replace phone and email tokens below -->
-  <div class="meta">
-    Phone <a href="tel:469543558">0469543558</a> ·
-    Email <a href="mailto:Kristoferk14@gmail.com">Kristoferk14@gmail.com</a>
+<div class="card" role="main" aria-labelledby="contact-title">
+  <div class="left">
+    <h1 id="contact-title">Kristofer J</h1>
+    <div class="meta">
+      <span class="tag">Gamer · Creator · Contact</span>
+      <div style="margin-top:8px">
+        Phone <a href="tel:0469543558" style="color:var(--accent);text-decoration:none;margin:0 6px">0469543558</a> ·
+        Email <a href="mailto:Kristoferk14@gmail.com" style="color:var(--accent);text-decoration:none;margin-left:6px">Kristoferk14@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="accent-bar" aria-hidden="true"></div>
+
+    <div class="links" aria-label="Social and gaming links">
+      <a class="link-btn" href="https://steamcommunity.com/id/KristoferJ/" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/></svg>
+        Steam
+      </a>
+
+      <a class="link-btn" href="https://www.xbox.com/play/user/KristoferJ3289" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18"/></svg>
+        Xbox
+      </a>
+
+      <a class="link-btn" href="https://www.instagram.com/kristoferj_210/" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/></svg>
+        Instagram
+      </a>
+
+      <a class="link-btn" href="https://www.tiktok.com/@kristofer_jurgenson" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 8v8a4 4 0 1 0 4-4V6"/></svg>
+        TikTok
+      </a>
+
+      <a class="link-btn" href="https://discord.com/users/966376615942701056" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 14s1.5 1 4 1 4-1 4-1"/></svg>
+        Discord
+      </a>
+
+      <!-- Epic Games (placeholder URL) -->
+      <a class="link-btn" href="https://store.epicgames.com/u/9e999c313a744823b2bcabd78c5286bc" target="_blank" rel="noopener" title="Epic Games profile (placeholder)">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <!-- stylized 'E' badge -->
+          <path d="M5 7h10v2H8v2h7v2H8v4H5z"/>
+        </svg>
+        Epic Games
+      </a>
+    </div>
+
+    <div class="bio">
+      Quick connect: tap any link to open the service. Looking to play or collaborate? Reach out!
+    </div>
+
+    <footer>Share this page or scan my NFC tag.</footer>
   </div>
 
-  <!-- Social and gaming links section -->
-  <div class="links">
-    <!-- Steam -->
-    <a class="link-btn" href="https://steamcommunity.com/id/KristoferJ/" target="_blank" rel="noopener">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <!-- Simple gear-like placeholder icon -->
-        <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      Steam
-    </a>
+  <aside class="right" aria-label="Profile card">
+    <div style="display:flex;align-items:center;gap:14px">
+      <div class="avatar">KJ</div>
+      <div>
+        <div style="font-weight:800;font-size:1.05rem">Kristofer J</div>
+        <div style="color:var(--muted);font-size:.92rem;margin-top:4px">Gamertag: KristoferJ</div>
+      </div>
+    </div>
 
-    <!-- Xbox -->
-    <a class="link-btn" href="https://www.xbox.com/play/user/KristoferJ3289" target="_blank" rel="noopener">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2" fill="none"/>
-      </svg>
-      Xbox
-    </a>
-
-    <!-- Instagram -->
-    <a class="link-btn" href="https://www.instagram.com/kristoferj_210/" target="_blank" rel="noopener">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.2" fill="none"/>
-      </svg>
-      Instagram
-    </a>
-
-    <!-- TikTok -->
-    <a class="link-btn" href="https://www.tiktok.com/@kristofer_jurgenson" target="_blank" rel="noopener">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M9 8v8a4 4 0 1 0 4-4V6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </svg>
-      TikTok
-    </a>
-
-    <!-- Discord -->
-    <a class="link-btn" href="https://discord.com/users/966376615942701056" target="_blank" rel="noopener">
-      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M8 14s1.5 1 4 1 4-1 4-1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </svg>
-      Discord
-    </a>
-  </div>
-
-  <div style="margin-top:12px" class="small">
-    <!-- Optional short bio or note -->
-    -
-  </div>
-
-  <footer>Tap a link to open. Share this page or scan my NFC tag.</footer>
+    <div style="margin-top:14px">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <div class="tag">Available: Evenings</div>
+        <div class="tag">Timezone: CET</div>
+      </div>
+    </div>
+  </aside>
 </div>
